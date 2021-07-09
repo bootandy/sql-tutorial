@@ -1,6 +1,6 @@
 .App {
   font-family: sans-serif;
-  font-size: 1.5em;
+  /* font-size: 1.0em; */
 }
 
 textarea {
@@ -21,7 +21,7 @@ table {
 }
 
 thead {
-  font-weight: bold;
+  font-weight: bolder;
   text-align: center;
   border: 2px solid #999;
 }
@@ -33,4 +33,52 @@ td {
 
 .error {
   color: #922;
+}
+
+.results td {
+  font-weight: 300;
+  padding: 0.1em .5em;
+}
+.results th {
+  font-weight: bolder;
+  padding: 0.1em .5em;
+}
+
+.no-pad {
+  margin: 0px;
+  padding: 0px;
+}
+
+.description {
+  white-space: pre-line;
+}
+
+.desc {
+  margin-bottom: 1em;
+  display: block;
+}
+
+.jumbotron {
+  padding: 1em 2rem;
+}
+
+.correct {
+  padding: 0;
+  margin: 0;
+  border: 2px green solid;
+}
+
+.incorrect {
+  padding: 0;
+  margin: 0;
+  border: 2px red solid;
+}
+
+
+.desiredTextarea {
+  width: 100%;
+}
+
+.desiredOutputs {
+  padding: .1em 1em;
 }
