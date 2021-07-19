@@ -29,7 +29,7 @@ export default class QueryResult extends React.Component<CorePropResult> {
       return (
         <>
           {this.props.result.map((res, id) =>
-            <div key={'result:' + id} className='results'>
+            <div key={'result:' + id}>
               <QueryResultSingle result={res} />
             </div>
           )}
