@@ -49,7 +49,7 @@ select * from factory_q2;`
 const title = `Insert puzzle 2`
 
 const description = `
-Insert some rows into the factory_q2 table such that running the 'desired output' queries below gives the desired output
+Insert a row into the factory_q2 table such that running the 'desired output' queries below gives the desired output
 
 Note: This trick will cause most databases to error on running the query. But Sqlite allows it.
 `

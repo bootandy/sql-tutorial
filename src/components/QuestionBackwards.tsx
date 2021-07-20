@@ -1,6 +1,5 @@
 
 import React from "react";
-// import TextInput from "react-native";
 import Container from 'react-bootstrap/Container';
 import RunSqlBox from "../components/Core";
 import initSqlJs from "sql.js";
@@ -8,7 +7,6 @@ import QueryResult from "./QueryResult";
 import QueryResultSingle from "./QueryResultSingle";
 import QueryErrors from "./QueryErrors";
 import Flexbox from "./Flexbox";
-// import zip from "zip-array"
 var _ = require('lodash');
 
 
@@ -23,9 +21,6 @@ function arraysEqual(a: Array<any>, b: Array<any>) {
   if (a === b) return true;
   if (a == null || b == null) return false;
   if (a.length !== b.length) return false;
-  console.log("array eq?");
-  console.log(a);
-  console.log(b);
 
   for (var i = 0; i < a.length; ++i) {
     if (a[i] instanceof Array && b[i] instanceof Array) {
@@ -177,26 +172,12 @@ export default class QD extends React.Component<MyProps, MyState> {
 
   render() {
     let { db } = this.state;
-    // let correctSql = this.props.correctSql
-    // const zp : Array<
-    //   Array<string>, 
-    //   Array<{
-    //     columns: Array<string>, 
-    //     values: Array<Array<any>>
-    //   }>
-    // > = _.zip(this.state.displaySql, this.state.desiredOutput);
+    if (!db) return <pre>Loading3...</pre>;
 
     const zpo = _.zip(this.state.displaySql, this.state.desiredOutput, this.state.currentOutput);
-
-    console.log("zpo");
-    console.log(zpo);
     const zp = zpo.map((v : Array<any>) => { 
       return [v[0], v[1], v[2], (safeArraysEqual(v[1], v[2]) ? "correct" : "incorrect")];
-      // return [v[0], v[1], v[2]]
     });
-    console.log(zp);
-
-    if (!db) return <pre>Loading3...</pre>;
 
     return (
       <Container className="p-2">
@@ -230,6 +211,10 @@ export default class QD extends React.Component<MyProps, MyState> {
               resetDb={this.resetDb}
               setSql={this.setSql}
               runSql={this.execUserSql} />
+            <Flexbox>
+              <QueryErrors errors={this.state.err} />
+              <QueryResult result={this.state.results} uniqueName='userRun' />
+            </Flexbox>
           </div>
         </div>
         <div className="row">
@@ -237,16 +222,6 @@ export default class QD extends React.Component<MyProps, MyState> {
           <div className="col-6"></div>
 
           <div className="col-6">
-            <Flexbox>
-              <QueryErrors errors={this.state.err} />
-              <QueryResult result={this.state.results} uniqueName='userRun' />
-              {/* {this.isOutputCorrect() ?
-                <img src={"/images/tick.png"} width="40" />
-                :
-                <img src={"/images/cross.png"} width="40" />
-              } */}
-
-            </Flexbox>
           </div>
         </div>
 

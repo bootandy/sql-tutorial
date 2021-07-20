@@ -7,12 +7,12 @@ import { countBy } from 'lodash';
 const setupSql = `
       create table q3_correct(id, name, description);
       insert into q3_correct values(1,	'meowly cyrus',	'fluffy');
-      insert into q3_correct values(2,	'clawdia',	'soft');
-      insert into q3_correct values(3,	'katy purry',	null);
+      insert into q3_correct values(2,	'clawdia', 'soft');
+      insert into q3_correct values(3,	'katy purry', null);
       insert into q3_correct values(4,	'chairman meow', 'fluffy');
 
       create table q3(id, name, description);
-      insert into q3 values(1	,'meowly cyrus',	'fluffy');
+      insert into q3 values(1	,'meowly cyrus', 'fluffy');
       insert into q3 values(2	,'clawdia',	'soft');
       insert into q3 values(3	,'katy purry',	'coarse');
       insert into q3 values(4	,'chairman meow', 'fluffy');
@@ -40,7 +40,7 @@ Update a row(s) in the q3 table such that running the 'desired output' queries b
 export default function B3() {
     return (
         <Heading>
-            <QD baseSelect={baseSelect} setupSql={setupSql} initialSql={initialSql} correctSql={correctSql} title={title} description={description}/> 
+            <QD baseSelect={baseSelect} setupSql={setupSql} initialSql={initialSql} correctSql={correctSql} title={title} description={description} />
         </Heading>
     )
 }

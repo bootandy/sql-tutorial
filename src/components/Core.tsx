@@ -6,6 +6,7 @@ import ButtonGroup from 'react-bootstrap/ButtonGroup'
 type MyProps = {
   setupSql: string,
   initialSql: string,
+  hint?: string,
   runSql: () => void,
   setSql: (sql: string) => void,
   resetDb: () => void,
@@ -31,9 +32,13 @@ export default class RunSqlBox extends React.Component<MyProps, {}> {
           <ButtonGroup aria-label="runs" className="mb-2 run-button-group">
             <span className="run-buttons">
               <Button variant="primary" onClick={e => this.props.runSql()}>Run</Button>
-            </span><span className="run-buttons">
+            </span>
+            {this.props.hint &&
+            <span className="run-buttons">
               <Button variant="primary" className="">Hint</Button>
-            </span><span className="run-buttons">
+            </span>
+            }
+            <span className="run-buttons">
               <Button variant="primary" onClick={e => this.props.resetDb()} >Reset DB</Button>
             </span>
           </ButtonGroup>

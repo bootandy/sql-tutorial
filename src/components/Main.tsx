@@ -16,9 +16,9 @@ import F3 from '../pages/fundamentals/Q3';
 import F4 from '../pages/fundamentals/Q4';
 import F5 from '../pages/fundamentals/Q5';
 
-import B1 from '../pages/backwards/Q1';
-import B2 from '../pages/backwards/Q2';
-import B3 from '../pages/backwards/Q3';
+import B1 from '../pages/insert/Q1';
+import B2 from '../pages/insert/Q2';
+import B3 from '../pages/insert/Q3';
 
 
 const Main = () => {
@@ -40,13 +40,13 @@ const Main = () => {
                 <Route exact path='/fundamentals/q4' component={F4}></Route>
                 <Route exact path='/fundamentals/q5' component={F5}></Route>
                 
-                <Route exact path='/backwards/q1' component={B1}></Route>
-                <Route exact path='/backwards/q2' component={B2}></Route>
-                <Route exact path='/backwards/q3' component={B3}></Route>
+                <Route exact path='/insert/q1' component={B1}></Route>
+                <Route exact path='/insert/q2' component={B2}></Route>
+                <Route exact path='/insert/q3' component={B3}></Route>
 
                 <Route path='/gotchas' component={Home}></Route>
                 <Route path='/fundamentals' component={Home}></Route>
-                <Route path='/backwards' component={Home}></Route>
+                <Route path='/insert' component={Home}></Route>
             </Switch>
         </Container>
     );

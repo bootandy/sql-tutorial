@@ -7,7 +7,7 @@ import Jumbotron from 'react-bootstrap/Jumbotron'
 import { Link } from 'react-router-dom'
 
 
-const regex = /\/q\d/;
+const regex = /\/q\d+/;
 
 const getPrevQuestion = () :string => {
     return getNeighbourQuestion(-1)
@@ -17,7 +17,7 @@ const getNextQuestion = () :string => {
     return getNeighbourQuestion(1)
 }
 
-// Warning: Will break if there is ever a '/q' in the url apart from the
+// Warning: Will break if there is ever a '/q{0-9}' in the url apart from the
 // question bit on the end
 const getNeighbourQuestion = (inc : number) :string => {
     const loc : string = window.location.pathname
@@ -53,7 +53,7 @@ const Heading: React.FunctionComponent<{}> = props => {
                 <ButtonGroup aria-label="Basic example" size="lg" className="mb-2 ">
                     <Button variant="secondary" href="/fundamentals/q1">Fundamentals</Button>
                     <Button variant="secondary" href="/gotchas/q1">Gotchas</Button>
-                    <Button variant="secondary" href="/backwards/q1">Backwards</Button>
+                    <Button variant="secondary" href="/insert/q1">Backwards</Button>
                     <Button variant="secondary">Quiz</Button>
                 </ButtonGroup>
             </div>

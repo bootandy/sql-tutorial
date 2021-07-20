@@ -22,7 +22,7 @@ export default class Home extends React.Component {
 
         <Link to="/fundamentals/q1">SQL fundamentals</Link>
         <Link to="/gotchas/q1">SQL gotchas </Link>
-        <Link to="/backwards/q1">SQL backwards</Link>
+        <Link to="/insert/q1">SQL insert puzzles</Link>
       </div>
     );
   }
